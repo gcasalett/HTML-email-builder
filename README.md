@@ -4,7 +4,7 @@ To do:
 - Figure out how to better organize files. Thinking about images that may be included in the template, how to move those to dist?
 - Add a "how this all works" section 
 
-This is a very simple Grunt task to create HTML emails. Using Zurb's Ink framework as a base. 
+This is a very simple Grunt task to compile HTML emails from a HTML file and CSS stylesheet. Using [Zurb's Ink framework](http://zurb.com/ink/) as a base. 
 
 ### Usage
 
