@@ -1,9 +1,3 @@
-/**********************************************
-* Ink v1.0.5 - Copyright 2013 ZURB Inc        *
-**********************************************/
-
-/* Client-specific Styles & Reset */
-
 #outlook a {
   padding:0;
 }
@@ -50,7 +44,7 @@ img {
 
 center {
   width: 100%;
-  min-width: 580px;
+  min-width: $container-width;
 }
 
 a img {
@@ -95,7 +89,7 @@ table.body {
 }
 
 table.container {
-  width: 580px;
+  width: $container-width;
   margin: 0 auto;
   text-align: inherit;
 }
@@ -152,7 +146,7 @@ table.eight { width: 380px; }
 table.nine { width: 430px; }
 table.ten { width: 480px; }
 table.eleven { width: 530px; }
-table.twelve { width: 580px; }
+table.twelve { width: $container-width; }
 
 table.one center { min-width: 30px; }
 table.two center { min-width: 80px; }
@@ -165,7 +159,7 @@ table.eight center { min-width: 380px; }
 table.nine center { min-width: 430px; }
 table.ten center { min-width: 480px; }
 table.eleven center { min-width: 530px; }
-table.twelve center { min-width: 580px; }
+table.twelve center { min-width: $container-width; }
 
 table.one .panel center { min-width: 10px; }
 table.two .panel center { min-width: 60px; }
@@ -225,29 +219,29 @@ td.expander {
 
 table.columns .text-pad,
 table.column .text-pad {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 table.columns .left-text-pad,
 table.columns .text-pad-left,
 table.column .left-text-pad,
 table.column .text-pad-left {
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 table.columns .right-text-pad,
 table.columns .text-pad-right,
 table.column .right-text-pad,
 table.column .text-pad-right {
-  padding-right: 10px;
+  padding-right: 20px;
 }
 
 /* Block Grid */
 
 .block-grid {
   width: 100%;
-  max-width: 580px;
+  max-width: $container-width;
 }
 
 .block-grid td {
@@ -317,8 +311,8 @@ img.center {
 /* Typography */
 
 body, table.body, h1, h2, h3, h4, h5, h6, p, td {
-  color: #222222;
-  font-family: "Helvetica", "Arial", sans-serif;
+  color: $base-font-color;
+  font-family: $main-font;
   font-weight: normal;
   padding:0;
   margin: 0;
@@ -352,21 +346,14 @@ small {
 }
 
 a {
-  color: #2ba6cb;
+  color: $link-color;
   text-decoration: none;
 }
 
 a:hover {
-  color: #2795b6 !important;
+  color: lighten($link-color, 5%);
 }
 
-a:active {
-  color: #2795b6 !important;
-}
-
-a:visited {
-  color: #2ba6cb !important;
-}
 
 h1 a,
 h2 a,
@@ -374,25 +361,17 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-  color: #2ba6cb;
+  color: $link-color;
 }
 
-h1 a:active,
-h2 a:active,
-h3 a:active,
-h4 a:active,
-h5 a:active,
-h6 a:active {
-  color: #2ba6cb !important;
-}
 
-h1 a:visited,
-h2 a:visited,
-h3 a:visited,
-h4 a:visited,
-h5 a:visited,
-h6 a:visited {
-  color: #2ba6cb !important;
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  color: lighten($link-color, 5%);
 }
 
 /* Panels */
@@ -558,6 +537,15 @@ table.alert:hover td {
   background: #970b0e !important;
 }
 
+table.callout td {
+  background: $callout-button-color;
+  border: none;
+}
+
+table.callout:hover td {
+  background: darken($callout-button-color, 10%) !important;
+}
+
 table.radius td {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -684,84 +672,5 @@ body.outlook p {
   table[class="body"] .show-for-small,
   table[class="body"] .hide-for-desktop {
     display: inherit !important;
-  }
-}
-
-/* template styles */
-table.facebook td {
-  background: #3b5998;
-  border-color: #2d4473;
-}
-
-table.facebook:hover td {
-  background: #2d4473 !important;
-}
-
-table.twitter td {
-  background: #00acee;
-  border-color: #0087bb;
-}
-
-table.twitter:hover td {
-  background: #0087bb !important;
-}
-
-table.google-plus td {
-  background-color: #DB4A39;
-  border-color: #CC0000;
-}
-
-table.google-plus:hover td {
-  background: #CC0000 !important;
-}
-
-.template-label {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 11px;
-}
-
-.callout .wrapper {
-  padding-bottom: 20px;
-}
-
-.callout .panel {
-  background: #ECF8FF;
-  border-color: #b9e5ff;
-}
-
-.header {
-  background: #999999;
-}
-
-.footer .wrapper {
-  background: #ebebeb;
-}
-
-.footer h5 {
-  padding-bottom: 10px;
-}
-
-table.columns .text-pad {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-table.columns .left-text-pad {
-  padding-left: 10px;
-}
-
-table.columns .right-text-pad {
-  padding-right: 10px;
-}
-
-@media only screen and (max-width: 600px) {
-
-  table[class="body"] .right-text-pad {
-    padding-left: 10px !important;
-  }
-
-  table[class="body"] .left-text-pad {
-    padding-right: 10px !important;
   }
 }
